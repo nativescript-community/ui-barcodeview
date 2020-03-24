@@ -1,0 +1,3 @@
+[submodule "src-native/ios/BarcodeScannerFramework"]
+	path = src-native/ios/BarcodeScannerFramework
+	url = git@github.com:farfromrefug/ios-framework-barcodescanner.git

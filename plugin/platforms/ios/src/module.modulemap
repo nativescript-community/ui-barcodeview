@@ -1,0 +1,5 @@
+module MaterialTextField {
+    umbrella header "QRCodeReader.h"
+    export *
+    module * { export * }
+}

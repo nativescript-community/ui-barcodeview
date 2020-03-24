@@ -1,0 +1,89 @@
+{
+    "name": "nativescript-barcodeview",
+    "version": "3.4.2",
+    "description": "Scan QR/barcodes with your NativeScript app.",
+    "main": "barcodeview",
+    "typings": "index.d.ts",
+    "nativescript": {
+        "platforms": {
+            "android": "2.3.0",
+            "ios": "2.3.0"
+        }
+    },
+    "scripts": {
+        "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && tsc -skipLibCheck",
+        "clean": "rimraf ./plugin/**/*.d.ts ./plugin/**/*.js ./plugin/**/*.js.map plugin/node_modules plugin/package-lock.json",
+        "build.plugin": "npm run tsc && cp README.md plugin/",
+        "build": "npm run build.plugin",
+        "publish": "npm run build && lerna publish",
+        "demo.ios": "npm i && npm run tsc && cd demo && tns run ios",
+        "demo.android": "npm i && npm run tsc && cd demo && tns run android",
+        "clean.demo": "rimraf demo/hooks demo/node_modules demo/platforms",
+        "plugin.watch.tsc": "npm run tsc -- -w",
+        "plugin.watch": "npm run plugin.watch.tsc",
+        "commitmsg": "commitlint -e $GIT_PARAMS",
+        "generate.typings.ios": "cd ../demo && TNS_DEBUG_METADATA_PATH=\"$(pwd)/metadata\" tns build ios && TNS_TYPESCRIPT_DECLARATIONS_PATH=\"$(pwd)/typings\" tns build ios && echo 'Now look for your library typings in demo/typings!'",
+        "precommit": "lint-staged"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/farfromrefug/nativescript-barcodeview.git"
+    },
+    "keywords": [
+        "ecosystem:nativescript",
+        "NativeScript",
+        "Barcode",
+        "Barcode View",
+        "Barcode Scanner",
+        "Bulk",
+        "Bulk Scan",
+        "Continuous",
+        "Flashlight",
+        "Torch",
+        "Torch",
+        "Aztec",
+        "Codabar",
+        "Code39",
+        "Code93",
+        "Code128",
+        "Datamatrix",
+        "EAN8",
+        "EAN13",
+        "ITF",
+        "ITF14",
+        "PDF417",
+        "QR",
+        "RSS14",
+        "UPCA",
+        "UPCE"
+    ],
+    "author": "Martin Guillon martin@akylas.fr>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/farfromrefug/nativescript-barcodeview/issues"
+    },
+    "homepage": "https://github.com/farfromrefug/nativescript-barcodeview",
+    "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@nativescript/core": "6.5.0",
+        "@types/node": "^13.9.3",
+        "cpy-cli": "^3.1.0",
+        "husky": "^4.2.3",
+        "lerna": "^3.20.2",
+        "nativescript-perms": "^2.0.4",
+        "npm-watch": "^0.6.0",
+        "prompt": "^1.0.0",
+        "rimraf": "^3.0.2",
+        "tns-platform-declarations": "^6.5.0",
+        "tslint": "^6.1.0",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-config-standard": "^9.0.0",
+        "typescript": "~3.8.3"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    }
+}

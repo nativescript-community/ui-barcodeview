@@ -1,8 +1,8 @@
 *.ts
 *.map
-!barcodescanner.android.d.ts
-!barcodescanner.ios.d.ts
-!barcodescanner-common.d.ts
+!barcodeview.android.d.ts
+!barcodeview.ios.d.ts
+!barcodeview-common.d.ts
 !index.d.ts
 tsconfig.json
 platforms/android/AndroidManifest.xml

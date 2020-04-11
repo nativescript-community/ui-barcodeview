@@ -7,6 +7,7 @@
             <!-- <Button row="2" class="btn btn-primary btn-rounded-sm" text="back camera, with flip" @tap="doScanWithBackCamera"></Button> -->
             <!-- <Button row="3" class="btn btn-primary btn-rounded-sm" text="front camera, no flip" @tap="doScanWithFrontCamera"></Button> -->
             <Button row="3" class="btn btn-primary btn-rounded-sm" text="bottomsheet" @tap="showBottomSheet"></Button>
+            <Button row="3" class="btn btn-primary btn-rounded-sm" text="generateBarcode" @tap="generateBarcode"></Button>
 
             <Image :src="generatedBarcode" width="140" height="140" horizontalAlignment="center" verticalAlignment="center" backgroundColor="red" />
             <Label v-show="generatedBarcodeText" class="body" textAlignment="center" textWrap="true">
@@ -46,6 +47,16 @@ export default Vue.extend({
         },
         doScanWithFrontCamera() {
             this.scan(true);
+        },
+        generateBarcode() {
+            this.generatedBarcode = generateBarCode({
+                text: 'https://github.com/farfromrefug/nativescript-barcodeview',
+                type: 'QR_CODE',
+                width: 400,
+                height: 400,
+                frontColor: 'green',
+                backColor: 'yellow'
+            });
         },
         showBottomSheet() {
             this.$showBottomSheet(BottomSheet, {

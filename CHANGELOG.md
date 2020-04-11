@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.6](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.5...v3.4.6) (2020-04-11)
+
+
+### Bug Fixes
+
+* UIImage from CIImage are no drawn correctly ([d635c29](https://github.com/farfromrefug/nativescript-barcodeview/commit/d635c29a6a166ede0f111300c4fe202a9ddab0ed))
+
+
+
+
+
 ## [3.4.5](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.4...v3.4.5) (2020-03-25)
 
 

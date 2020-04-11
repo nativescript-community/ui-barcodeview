@@ -294,6 +294,8 @@ export function generateBarCode({
 
                 let context = CIContext.context();
                 if (context) {
+                    // if we create the UIImage directly from the CIImage then it wont be drawn correctly in UIImageView
+                    // the contentMode won't be respected, and it won't even draw with SDAnimatedImageView
                     const CGImage = context.createCGImageFromRect(output, output.extent);
                     return new ImageSource(UIImage.imageWithCGImageScaleOrientation(CGImage, UIScreen.mainScreen.scale, UIImageOrientation.Up));
                 }

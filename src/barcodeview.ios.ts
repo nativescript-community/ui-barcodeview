@@ -291,7 +291,13 @@ export function generateBarCode({
                 const scaleY = height / output.extent.size.height;
 
                 output = output.imageByApplyingTransform(CGAffineTransformMakeScale(scaleX, scaleY));
-                return new ImageSource(UIImage.imageWithCIImageScaleOrientation(output, UIScreen.mainScreen.scale, UIImageOrientation.Up));
+
+                let context = CIContext.context();
+                if (context) {
+                    const CGImage = context.createCGImageFromRect(output, output.extent);
+                    return new ImageSource(UIImage.imageWithCGImageScaleOrientation(CGImage, UIScreen.mainScreen.scale, UIImageOrientation.Up));
+                }
+
             }
         }
     }

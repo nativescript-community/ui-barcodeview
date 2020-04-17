@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.7](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.6...v3.4.7) (2020-04-17)
+
+
+### Bug Fixes
+
+* **android:** ensure we stop the preview on dispose ([62b7104](https://github.com/farfromrefug/nativescript-barcodeview/commit/62b710486d092a90c338c0fa6eb8f283be002b82))
+
+
+
+
+
 ## [3.4.6](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.5...v3.4.6) (2020-04-11)
 
 

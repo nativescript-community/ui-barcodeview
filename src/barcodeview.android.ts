@@ -132,6 +132,8 @@ export class BarcodeView extends BarcodeScannerBaseView {
     disposeNativeView() {
         const barcodeView = this.nativeViewProtected;
         barcodeView.decodeContinuous(null);
+        barcodeView.stopDecoding();
+        barcodeView.pause();
         this.callback = null;
         // this.beepManager = null;
 

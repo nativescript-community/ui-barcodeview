@@ -50,7 +50,7 @@ export default Vue.extend({
         },
         generateBarcode() {
             this.generatedBarcode = generateBarCode({
-                text: 'https://github.com/farfromrefug/nativescript-barcodeview',
+                text: 'ecairn://transfer/443427876#44#Le Caméléon Nicolas',
                 type: 'QR_CODE',
                 width: 400,
                 height: 400,

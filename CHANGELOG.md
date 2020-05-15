@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.8](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.7...v3.4.8) (2020-05-15)
+
+
+### Bug Fixes
+
+* **ios:** error when beep file not found ([a77dce1](https://github.com/farfromrefug/nativescript-barcodeview/commit/a77dce1c29634bb99490c6c1d343ad4da85d6a68))
+
+
+
+
+
 ## [3.4.7](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.6...v3.4.7) (2020-04-17)
 
 

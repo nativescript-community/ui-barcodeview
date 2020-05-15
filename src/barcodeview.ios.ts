@@ -48,12 +48,15 @@ export class BarcodeView extends BarcodeScannerBaseView {
             if (this.beepOnScan) {
                 if (!this._player) {
                     const beepPath = NSBundle.mainBundle.pathForResourceOfType('beep', 'caf');
-                    this._player = AVAudioPlayer.alloc().initWithContentsOfURLError(NSURL.fileURLWithPath(beepPath));
-                    this._player.numberOfLoops = 1;
-                    this._player.volume = 0.7; // this is not the actual volume, as that really depends on the device volume
-                    this._player.prepareToPlay();
+                    if (beepPath) {
+
+                        this._player = AVAudioPlayer.alloc().initWithContentsOfURLError(NSURL.fileURLWithPath(beepPath));
+                        this._player.numberOfLoops = 1;
+                        this._player.volume = 0.7; // this is not the actual volume, as that really depends on the device volume
+                        this._player.prepareToPlay();
+                    }
                 }
-                this._player.play();
+                this._player && this._player.play();
             }
 
             let barcodeFormat = getBarcodeFormat(format);

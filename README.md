@@ -49,7 +49,7 @@ The nativescript BarcodeView is base on [nativescript-barcodescanner](https://gi
 (https://github.com/EddyVerbruggen)
 ## Plain NativeScript
 
-<span style="color:red">IMPORTANT: </span>_Make sure you include `xmlns:mdc="nativescript-canvas"` on the Page element_
+<span style="color:red">IMPORTANT: </span>_Make sure you include `xmlns:bc="nativescript-barcodeview"` on the Page element_
 
 ### XML
 

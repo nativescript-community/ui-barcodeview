@@ -63,7 +63,7 @@ export const pauseProperty = new Property<BarcodeView, boolean>({
     valueConverter: booleanConverter
 });
 
-export abstract class BarcodeView extends ContentView {
+export class BarcodeView extends ContentView {
     static scanResultEvent: string = 'scanResult';
 
     protected formats: string;

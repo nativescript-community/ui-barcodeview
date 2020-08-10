@@ -73,9 +73,9 @@ export class BarcodeView extends ContentView {
     protected pause: boolean;
     protected torchOn: boolean;
 
-    abstract pauseScanning();
+    pauseScanning();
 
-    abstract resumeScanning();
+    resumeScanning();
 }
 
 export function generateBarCode(options: { text: string; type: BarcodeFormat; width: number; height: number; frontColor?: Color | string; backColor?: Color | string }): ImageSource {

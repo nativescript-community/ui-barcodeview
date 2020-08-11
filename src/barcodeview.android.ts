@@ -118,8 +118,8 @@ export class BarcodeView extends BarcodeScannerBaseView {
             possibleResultPoints(param0: java.util.List<com.google.zxing.ResultPoint>) {}
         });
         barcodeView.decodeContinuous(this.callback);
-        androidApp.on('onActivityResumed', this.onActivityResume, this);
-        androidApp.on('onActivityPaused', this.onActivityPause, this);
+        androidApp.on('activityResumed', this.onActivityResume, this);
+        androidApp.on('activityPaused', this.onActivityPause, this);
         if (!this.formats) {
             const types = getBarcodeTypes(null);
             barcodeView.setDecoderFactory(new com.journeyapps.barcodescanner.DefaultDecoderFactory(types));
@@ -137,8 +137,8 @@ export class BarcodeView extends BarcodeScannerBaseView {
         this.callback = null;
         // this.beepManager = null;
 
-        androidApp.off('onActivityResumed', this.onActivityResume, this);
-        androidApp.off('onActivityPaused', this.onActivityPause, this);
+        androidApp.off('activityResumed', this.onActivityResume, this);
+        androidApp.off('activityPaused', this.onActivityPause, this);
         super.disposeNativeView();
     }
 

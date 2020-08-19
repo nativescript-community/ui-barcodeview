@@ -6,6 +6,8 @@ import { Color } from '@nativescript/core/color';
 export class BarcodeView extends BarcodeScannerBaseView {
     private _reader: QRCodeReader;
     private _hasSupport;
+    private _player: AVAudioPlayer;
+    private lastText: string;
 
     constructor() {
         super();
@@ -28,14 +30,12 @@ export class BarcodeView extends BarcodeScannerBaseView {
     }
 
     disposeNativeView() {
+        this.pauseScanning();
         this._reader = null;
         this._player = null;
         this.lastText = null;
-        // this._scanner.delegate = null;
-        // this._scanner = null;
+        super.disposeNativeView();
     }
-    private _player: AVAudioPlayer;
-    private lastText: string;
 
     initNativeView() {
         super.initNativeView();

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.9](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.8...v3.4.9) (2020-08-25)
+
+
+### Bug Fixes
+
+* change module name ([7350783](https://github.com/farfromrefug/nativescript-barcodeview/commit/73507836bf6c9d488fbb8954f1664e91cb260c4f))
+
+
+
+
+
 ## [3.4.8](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.7...v3.4.8) (2020-05-15)
 
 

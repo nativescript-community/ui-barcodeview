@@ -1,15 +1,7 @@
-import {
-    BarcodeFormat,
-    BarcodeView as BarcodeScannerBaseView,
-    formatsProperty,
-    preferFrontCameraProperty,
-    beepOnScanProperty,
-    pauseProperty,
-    torchOnProperty
-} from './barcodeview-common';
+import { BarcodeFormat, BarcodeView as BarcodeScannerBaseView, formatsProperty, preferFrontCameraProperty, beepOnScanProperty, pauseProperty, torchOnProperty } from './barcodeview-common';
 import { android as androidApp } from '@nativescript/core/application';
-import * as perms from 'nativescript-perms';
-import { ImageSource } from '@nativescript/core/image-source/image-source';
+import { request } from 'nativescript-perms';
+import { ImageSource } from '@nativescript/core/image-source';
 import { Color } from '@nativescript/core/color';
 
 function nativeFormat(format: BarcodeFormat) {
@@ -112,10 +104,10 @@ export class BarcodeView extends BarcodeScannerBaseView {
                     eventName: BarcodeScannerBaseView.scanResultEvent,
                     object: this,
                     format: result.getBarcodeFormat().toString(),
-                    text: result.getText()
+                    text: result.getText(),
                 });
             },
-            possibleResultPoints(param0: java.util.List<com.google.zxing.ResultPoint>) {}
+            possibleResultPoints(param0: java.util.List<com.google.zxing.ResultPoint>) {},
         });
         barcodeView.decodeContinuous(this.callback);
         androidApp.on('onActivityResumed', this.onActivityResume, this);
@@ -147,10 +139,9 @@ export class BarcodeView extends BarcodeScannerBaseView {
     }
 
     resumeScanning(): void {
-        perms
-            .request('camera')
-            .then(r => r[0] === 'authorized')
-            .then(r => {
+        request('camera')
+            .then((r) => r[0] === 'authorized')
+            .then((r) => {
                 if (r) {
                     this.nativeViewProtected.resume();
                 }
@@ -209,7 +200,7 @@ export function generateBarCode({
     width,
     height,
     frontColor,
-    backColor
+    backColor,
 }: {
     text: string;
     type: BarcodeFormat;
@@ -220,11 +211,11 @@ export function generateBarCode({
 }) {
     const barcodeEncoder = new com.nativescript.barcodeview.BarcodeEncoder();
     if (frontColor) {
-        let color = frontColor instanceof Color? frontColor : new Color(frontColor);
+        let color = frontColor instanceof Color ? frontColor : new Color(frontColor);
         barcodeEncoder.frontColor = color.android;
     }
     if (backColor) {
-        let color = backColor instanceof Color? backColor : new Color(backColor);
+        let color = backColor instanceof Color ? backColor : new Color(backColor);
         barcodeEncoder.backColor = color.android;
     }
     const nFormat = nativeFormat(type);

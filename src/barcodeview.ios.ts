@@ -1,6 +1,6 @@
 import { BarcodeFormat, BarcodeView as BarcodeScannerBaseView, formatsProperty, preferFrontCameraProperty, pauseProperty, torchOnProperty } from './barcodeview-common';
-import * as perms from 'nativescript-perms';
-import { ImageSource } from '@nativescript/core/image-source/image-source';
+import { request } from 'nativescript-perms';
+import { ImageSource } from '@nativescript/core/image-source';
 import { Color } from '@nativescript/core/color';
 
 export class BarcodeView extends BarcodeScannerBaseView {
@@ -49,7 +49,6 @@ export class BarcodeView extends BarcodeScannerBaseView {
                 if (!this._player) {
                     const beepPath = NSBundle.mainBundle.pathForResourceOfType('beep', 'caf');
                     if (beepPath) {
-
                         this._player = AVAudioPlayer.alloc().initWithContentsOfURLError(NSURL.fileURLWithPath(beepPath));
                         this._player.numberOfLoops = 1;
                         this._player.volume = 0.7; // this is not the actual volume, as that really depends on the device volume
@@ -68,7 +67,7 @@ export class BarcodeView extends BarcodeScannerBaseView {
                 eventName: BarcodeScannerBaseView.scanResultEvent,
                 object: this,
                 format: getBarcodeFormat(format),
-                text: text
+                text: text,
             });
         });
         if (!this.pause) {
@@ -90,15 +89,14 @@ export class BarcodeView extends BarcodeScannerBaseView {
 
     resumeScanning(): void {
         if (this._reader && !this._reader.running()) {
-            perms
-                .request('camera')
-                .then(r => r[0] === 'authorized')
-                .then(r => {
+            request('camera')
+                .then((r) => r[0] === 'authorized')
+                .then((r) => {
                     if (r) {
                         this._reader.startScanning();
                     }
                 })
-                .catch(err => {
+                .catch((err) => {
                     console.error(err);
                     setTimeout(() => {
                         throw err;
@@ -230,7 +228,7 @@ export function generateBarCode({
     width,
     height,
     frontColor,
-    backColor
+    backColor,
 }: {
     text: string;
     type: BarcodeFormat;
@@ -302,7 +300,6 @@ export function generateBarCode({
                     const CGImage = context.createCGImageFromRect(output, output.extent);
                     return new ImageSource(UIImage.imageWithCGImageScaleOrientation(CGImage, UIScreen.mainScreen.scale, UIImageOrientation.Up));
                 }
-
             }
         }
     }

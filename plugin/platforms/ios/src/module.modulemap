@@ -1,4 +1,4 @@
-module MaterialTextField {
+module QRCodeReader {
     umbrella header "QRCodeReader.h"
     export *
     module * { export * }

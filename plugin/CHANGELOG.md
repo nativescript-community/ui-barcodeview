@@ -3,55 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.4.9](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.8...v3.4.9) (2020-08-25)
+## [3.4.9](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.8...v3.4.9) (2020-08-25)
 
 
 ### Bug Fixes
 
-* change module name ([7350783](https://github.com/farfromrefug/nativescript-barcodeview/commit/73507836bf6c9d488fbb8954f1664e91cb260c4f))
+* change module name ([7350783](https://github.com/nativescript-community/ui-barcodeview/commit/73507836bf6c9d488fbb8954f1664e91cb260c4f))
 
 
 
 
 
-## [3.4.8](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.7...v3.4.8) (2020-05-15)
+## [3.4.8](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.7...v3.4.8) (2020-05-15)
 
-**Note:** Version bump only for package nativescript-barcodeview
-
-
-
-
-
-## [3.4.7](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.6...v3.4.7) (2020-04-17)
-
-**Note:** Version bump only for package nativescript-barcodeview
+**Note:** Version bump only for package @nativescript-community/ui-barcodeview
 
 
 
 
 
-## [3.4.6](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.5...v3.4.6) (2020-04-11)
+## [3.4.7](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.6...v3.4.7) (2020-04-17)
 
-**Note:** Version bump only for package nativescript-barcodeview
-
-
+**Note:** Version bump only for package @nativescript-community/ui-barcodeview
 
 
 
-## [3.4.5](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.4...v3.4.5) (2020-03-25)
+
+
+## [3.4.6](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.5...v3.4.6) (2020-04-11)
+
+**Note:** Version bump only for package @nativescript-community/ui-barcodeview
+
+
+
+
+
+## [3.4.5](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.4...v3.4.5) (2020-03-25)
 
 
 ### Bug Fixes
 
-* missing typings ([f439dc6](https://github.com/farfromrefug/nativescript-barcodeview/commit/f439dc61d8196853f69b3db63a3353a21a10abfe))
+* missing typings ([f439dc6](https://github.com/nativescript-community/ui-barcodeview/commit/f439dc61d8196853f69b3db63a3353a21a10abfe))
 
 
 
 
 
-## [3.4.4](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.3...v3.4.4) (2020-03-25)
+## [3.4.4](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.3...v3.4.4) (2020-03-25)
 
-**Note:** Version bump only for package nativescript-barcodeview
+**Note:** Version bump only for package @nativescript-community/ui-barcodeview
 
 
 
@@ -59,4 +59,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 3.4.3 (2020-03-24)
 
-**Note:** Version bump only for package nativescript-barcodeview
+**Note:** Version bump only for package @nativescript-community/ui-barcodeview

@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
+        "target": "es2017",
+        "module": "esnext",
         "moduleResolution": "node",
-        "declaration": true,
+        "removeComments": true,
         "removeComments": false,
         "noLib": false,
         "emitDecoratorMetadata": true,
@@ -25,9 +25,13 @@
             
             "tns-core-modules": ["./node_modules/@nativescript/core"],
             "tns-core-modules/*": ["./node_modules/@nativescript/core/*"],
-            "nativescript-barcodeview/*": ["src/*"],
+            "@nativescript-community/ui-barcodeview/*": ["src/*"],
+            "@nativescript-community/ui-barcodeview/": ["src/barcodeview"],
             "*": ["node_modules/*"]
-        }
+        },
+        "plugins": [
+          { "transform": "./node_modules/@nativescript/webpack/transformers/ns-transform-native-classes", "type": "raw" }
+        ]
     },
     "include": ["src/**/*", "src/**/*.ts", "./references.d.ts", "./src/references.d.ts"],
     "exclude": ["platforms"],

@@ -3,64 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.4.9](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.8...v3.4.9) (2020-08-25)
+## [3.4.9](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.8...v3.4.9) (2020-08-25)
 
 
 ### Bug Fixes
 
-* change module name ([7350783](https://github.com/farfromrefug/nativescript-barcodeview/commit/73507836bf6c9d488fbb8954f1664e91cb260c4f))
+* change module name ([7350783](https://github.com/nativescript-community/ui-barcodeview/commit/73507836bf6c9d488fbb8954f1664e91cb260c4f))
 
 
 
 
 
-## [3.4.8](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.7...v3.4.8) (2020-05-15)
-
-
-### Bug Fixes
-
-* **ios:** error when beep file not found ([a77dce1](https://github.com/farfromrefug/nativescript-barcodeview/commit/a77dce1c29634bb99490c6c1d343ad4da85d6a68))
-
-
-
-
-
-## [3.4.7](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.6...v3.4.7) (2020-04-17)
+## [3.4.8](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.7...v3.4.8) (2020-05-15)
 
 
 ### Bug Fixes
 
-* **android:** ensure we stop the preview on dispose ([62b7104](https://github.com/farfromrefug/nativescript-barcodeview/commit/62b710486d092a90c338c0fa6eb8f283be002b82))
+* **ios:** error when beep file not found ([a77dce1](https://github.com/nativescript-community/ui-barcodeview/commit/a77dce1c29634bb99490c6c1d343ad4da85d6a68))
 
 
 
 
 
-## [3.4.6](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.5...v3.4.6) (2020-04-11)
-
-
-### Bug Fixes
-
-* UIImage from CIImage are no drawn correctly ([d635c29](https://github.com/farfromrefug/nativescript-barcodeview/commit/d635c29a6a166ede0f111300c4fe202a9ddab0ed))
-
-
-
-
-
-## [3.4.5](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.4...v3.4.5) (2020-03-25)
+## [3.4.7](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.6...v3.4.7) (2020-04-17)
 
 
 ### Bug Fixes
 
-* missing typings ([f439dc6](https://github.com/farfromrefug/nativescript-barcodeview/commit/f439dc61d8196853f69b3db63a3353a21a10abfe))
+* **android:** ensure we stop the preview on dispose ([62b7104](https://github.com/nativescript-community/ui-barcodeview/commit/62b710486d092a90c338c0fa6eb8f283be002b82))
 
 
 
 
 
-## [3.4.4](https://github.com/farfromrefug/nativescript-barcodeview/compare/v3.4.3...v3.4.4) (2020-03-25)
+## [3.4.6](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.5...v3.4.6) (2020-04-11)
 
-**Note:** Version bump only for package nativescript-barcodeview
+
+### Bug Fixes
+
+* UIImage from CIImage are no drawn correctly ([d635c29](https://github.com/nativescript-community/ui-barcodeview/commit/d635c29a6a166ede0f111300c4fe202a9ddab0ed))
+
+
+
+
+
+## [3.4.5](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.4...v3.4.5) (2020-03-25)
+
+
+### Bug Fixes
+
+* missing typings ([f439dc6](https://github.com/nativescript-community/ui-barcodeview/commit/f439dc61d8196853f69b3db63a3353a21a10abfe))
+
+
+
+
+
+## [3.4.4](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.3...v3.4.4) (2020-03-25)
+
+**Note:** Version bump only for package @nativescript-community/ui-barcodeview
 
 
 
@@ -227,7 +227,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **android:** change currentContext to foregroundActivity ([81ab55c](https://github.com/farfromrefug/nativescript-barcodeview/commit/81ab55c02c1634873cd575777aa938803c514e5a)), closes [#50](https://github.com/farfromrefug/nativescript-barcodeview/issues/50)
+* **android:** change currentContext to foregroundActivity ([81ab55c](https://github.com/nativescript-community/ui-barcodeview/commit/81ab55c02c1634873cd575777aa938803c514e5a)), closes [#50](https://github.com/nativescript-community/ui-barcodeview/issues/50)
 
 
 

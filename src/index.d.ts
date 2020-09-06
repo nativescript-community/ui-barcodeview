@@ -1,1 +1,1 @@
-export * from "./barcodeview-common";
+export * from './barcodeview-common';

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.9...v3.5.0) (2020-09-06)
+
+
+### Features
+
+* N7 and new plugin name ([e27848d](https://github.com/nativescript-community/ui-barcodeview/commit/e27848dbf303dbf7a8c0da65643b0f4a8899207d))
+
+
+
+
+
 ## [3.4.9](https://github.com/nativescript-community/ui-barcodeview/compare/v3.4.8...v3.4.9) (2020-08-25)
 
 

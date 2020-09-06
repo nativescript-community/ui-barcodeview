@@ -1,6 +1,14 @@
-import { BarcodeFormat, BarcodeView as BarcodeScannerBaseView, formatsProperty, preferFrontCameraProperty, beepOnScanProperty, pauseProperty, torchOnProperty } from './barcodeview-common';
+import {
+    BarcodeFormat,
+    BarcodeView as BarcodeScannerBaseView,
+    beepOnScanProperty,
+    formatsProperty,
+    pauseProperty,
+    preferFrontCameraProperty,
+    torchOnProperty,
+} from './barcodeview-common';
 import { android as androidApp } from '@nativescript/core/application';
-import { request } from 'nativescript-perms';
+import { request } from '@nativescript-community/perms';
 import { ImageSource } from '@nativescript/core/image-source';
 import { Color } from '@nativescript/core/color';
 
@@ -39,7 +47,7 @@ const getBarcodeTypes = (formatsString: string): java.util.ArrayList<com.google.
     const types = new java.util.ArrayList<com.google.zxing.BarcodeFormat>();
     const BarcodeFormat = com.google.zxing.BarcodeFormat;
     if (formatsString) {
-        let formats = formatsString.split(',');
+        const formats = formatsString.split(',');
         for (let format of formats) {
             format = format.trim();
             const nFormat = nativeFormat(format as BarcodeFormat);
@@ -173,9 +181,9 @@ export class BarcodeView extends BarcodeScannerBaseView {
         }
 
         //swap the id of the camera to be used
-        if (value && settings.getRequestedCameraId() == android.hardware.Camera.CameraInfo.CAMERA_FACING_BACK) {
+        if (value && settings.getRequestedCameraId() === android.hardware.Camera.CameraInfo.CAMERA_FACING_BACK) {
             settings.setRequestedCameraId(android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT);
-        } else if (!value && settings.getRequestedCameraId() == android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT) {
+        } else if (!value && settings.getRequestedCameraId() === android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT) {
             settings.setRequestedCameraId(android.hardware.Camera.CameraInfo.CAMERA_FACING_BACK);
         }
         barcodeView.setCameraSettings(settings);
@@ -190,7 +198,11 @@ export class BarcodeView extends BarcodeScannerBaseView {
     }
 
     [pauseProperty.setNative](value: boolean) {
-        value ? this.pauseScanning() : this.resumeScanning();
+        if (value) {
+            this.pauseScanning();
+        } else {
+            this.resumeScanning();
+        }
     }
 }
 
@@ -211,11 +223,11 @@ export function generateBarCode({
 }) {
     const barcodeEncoder = new com.nativescript.barcodeview.BarcodeEncoder();
     if (frontColor) {
-        let color = frontColor instanceof Color ? frontColor : new Color(frontColor);
+        const color = frontColor instanceof Color ? frontColor : new Color(frontColor);
         barcodeEncoder.frontColor = color.android;
     }
     if (backColor) {
-        let color = backColor instanceof Color ? backColor : new Color(backColor);
+        const color = backColor instanceof Color ? backColor : new Color(backColor);
         barcodeEncoder.backColor = color.android;
     }
     const nFormat = nativeFormat(type);

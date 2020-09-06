@@ -78,7 +78,14 @@ export abstract class BarcodeView extends ContentView {
     abstract resumeScanning();
 }
 
-export function generateBarCode(options: { text: string; type: BarcodeFormat; width: number; height: number; frontColor?: Color | string; backColor?: Color | string }): ImageSource {
+export function generateBarCode(options: {
+    text: string;
+    type: BarcodeFormat;
+    width: number;
+    height: number;
+    frontColor?: Color | string;
+    backColor?: Color | string;
+}): ImageSource {
     return null;
 }
 

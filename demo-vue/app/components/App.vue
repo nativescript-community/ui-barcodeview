@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import { isIOS } from '@nativescript/core/platform';
-import { generateBarCode } from 'nativescript-barcodeview';
+import { generateBarCode } from '@nativescript-community/ui-barcodeview';
 import BottomSheet from './BottomSheet.vue';
 import Vue from 'vue';
 

@@ -16,7 +16,7 @@
   "dependencies": {
     "@nativescript/core": "~6.5.0",
     "nativescript-akylas-vue": "2.5.0-alpha.12",
-    "nativescript-barcodeview": "file:../plugin",
+    "@nativescript-community/ui-barcodeview": "file:../plugin",
     "nativescript-material-bottomsheet": "^3.1.14"
   },
   "devDependencies": {

@@ -1,5 +1,12 @@
-import { BarcodeFormat, BarcodeView as BarcodeScannerBaseView, formatsProperty, preferFrontCameraProperty, pauseProperty, torchOnProperty } from './barcodeview-common';
-import { request } from 'nativescript-perms';
+import {
+    BarcodeFormat,
+    BarcodeView as BarcodeScannerBaseView,
+    formatsProperty,
+    pauseProperty,
+    preferFrontCameraProperty,
+    torchOnProperty,
+} from './barcodeview-common';
+import { request } from '@nativescript-community/perms';
 import { ImageSource } from '@nativescript/core/image-source';
 import { Color } from '@nativescript/core/color';
 
@@ -13,14 +20,18 @@ export class BarcodeView extends BarcodeScannerBaseView {
         if (this._hasSupport) {
             if (typeof AVAudioSession.sharedInstance().setCategoryModeOptionsError === 'function') {
                 // if music was playing, it would stop unless we do this:
-                AVAudioSession.sharedInstance().setCategoryModeOptionsError(AVAudioSessionCategoryPlayback, AVAudioSessionModeDefault, AVAudioSessionCategoryOptions.MixWithOthers);
+                AVAudioSession.sharedInstance().setCategoryModeOptionsError(
+                    AVAudioSessionCategoryPlayback,
+                    AVAudioSessionModeDefault,
+                    AVAudioSessionCategoryOptions.MixWithOthers
+                );
             }
         }
     }
     createNativeView() {
-        let v = super.createNativeView() as UIView;
+        const v = super.createNativeView() as UIView;
         const types = getBarcodeTypes(this.formats);
-        this._reader = QRCodeReader.readerWithMetadataObjectTypes(<any>types);
+        this._reader = QRCodeReader.readerWithMetadataObjectTypes(types as any);
         if (this._hasSupport) {
             v.layer.insertSublayerAtIndex(this._reader.previewLayer, 0);
         }
@@ -67,7 +78,7 @@ export class BarcodeView extends BarcodeScannerBaseView {
                 eventName: BarcodeScannerBaseView.scanResultEvent,
                 object: this,
                 format: getBarcodeFormat(format),
-                text: text,
+                text,
             });
         });
         if (!this.pause) {
@@ -110,7 +121,11 @@ export class BarcodeView extends BarcodeScannerBaseView {
     }
 
     [pauseProperty.setNative](value: boolean) {
-        value ? this.pauseScanning() : this.resumeScanning();
+        if (value) {
+            this.pauseScanning();
+        } else {
+            this.resumeScanning();
+        }
     }
     [torchOnProperty.setNative](value: boolean) {
         this._reader.setTorch(value);
@@ -131,12 +146,10 @@ export class BarcodeView extends BarcodeScannerBaseView {
     }
 }
 
-const shouldReturnEAN13AsUPCA = (barcodeFormat: BarcodeFormat, value: string, requestedFormats?: string): boolean => {
-    return barcodeFormat === 'EAN_13' && value.indexOf('0') === 0;
-    // why not add the line below? Well, see https://github.com/EddyVerbruggen/nativescript-barcodeview/issues/176
-    // && (!requestedFormats || requestedFormats.indexOf("UPC_A") > -1);
-};
-
+const shouldReturnEAN13AsUPCA = (barcodeFormat: BarcodeFormat, value: string, requestedFormats?: string): boolean =>
+    barcodeFormat === 'EAN_13' && value.indexOf('0') === 0;
+// why not add the line below? Well, see https://github.com/EddyVerbruggen/nativescript-barcodeview/issues/176
+// && (!requestedFormats || requestedFormats.indexOf("UPC_A") > -1);
 function nativeFormat(format: BarcodeFormat) {
     switch (format) {
         case 'QR_CODE':
@@ -186,15 +199,19 @@ const getBarcodeFormat = (nativeFormat: string): BarcodeFormat => {
     else if (nativeFormat === AVMetadataObjectTypeEAN13Code) return 'EAN_13';
     else if (nativeFormat === AVMetadataObjectTypeInterleaved2of5Code) return 'INTERLEAVED_2_OF_5';
     else {
-        console.log('Unknown format scanned: ' + nativeFormat + ', please report this at https://github.com/EddyVerbruggen/nativescript-barcodeview/issues');
-        return <BarcodeFormat>nativeFormat;
+        console.log(
+            'Unknown format scanned: ' +
+                nativeFormat +
+                ', please report this at https://github.com/EddyVerbruggen/nativescript-barcodeview/issues'
+        );
+        return nativeFormat as BarcodeFormat;
     }
 };
 
-const getBarcodeTypes = (formatsString: string): Array<string> => {
+const getBarcodeTypes = (formatsString: string): string[] => {
     const types = [];
     if (formatsString) {
-        let formats = formatsString.split(',');
+        const formats = formatsString.split(',');
         for (let format of formats) {
             format = format.trim();
             const nFormat = nativeFormat(format as BarcodeFormat);
@@ -237,7 +254,7 @@ export function generateBarCode({
     frontColor?: Color | string;
     backColor?: Color | string;
 }) {
-    let data = NSString.stringWithString(text).dataUsingEncoding(NSISOLatin1StringEncoding);
+    const data = NSString.stringWithString(text).dataUsingEncoding(NSISOLatin1StringEncoding);
     let generatorKey;
     switch (type) {
         case 'QR_CODE':
@@ -261,7 +278,7 @@ export function generateBarCode({
             break;
     }
     if (generatorKey) {
-        let filter = CIFilter.filterWithName(generatorKey);
+        const filter = CIFilter.filterWithName(generatorKey);
         if (filter) {
             filter.setValueForKey(data, 'inputMessage');
             // filter.setValueForKey('H', 'inputCorrectionLevel');
@@ -270,18 +287,18 @@ export function generateBarCode({
             if (output) {
                 if (frontColor || backColor) {
                     //change qrcode color : #1e3259
-                    let filterFalseColor = CIFilter.filterWithName('CIFalseColor');
+                    const filterFalseColor = CIFilter.filterWithName('CIFalseColor');
                     filterFalseColor.setDefaults();
                     filterFalseColor.setValueForKey(output, 'inputImage');
                     // convert method
                     if (frontColor) {
-                        let color = frontColor instanceof Color ? frontColor : new Color(frontColor);
+                        const color = frontColor instanceof Color ? frontColor : new Color(frontColor);
                         filterFalseColor.setValueForKey(CIColor.colorWithCGColor(color.ios.CGColor), 'inputColor0');
                     } else {
                         filterFalseColor.setValueForKey(CIColor.colorWithString('black'), 'inputColor0');
                     }
                     if (backColor) {
-                        let color = backColor instanceof Color ? backColor : new Color(backColor);
+                        const color = backColor instanceof Color ? backColor : new Color(backColor);
                         filterFalseColor.setValueForKey(CIColor.colorWithCGColor(color.ios.CGColor), 'inputColor1');
                     } else {
                         filterFalseColor.setValueForKey(CIColor.colorWithString('white'), 'inputColor1');
@@ -293,12 +310,14 @@ export function generateBarCode({
 
                 output = output.imageByApplyingTransform(CGAffineTransformMakeScale(scaleX, scaleY));
 
-                let context = CIContext.context();
+                const context = CIContext.context();
                 if (context) {
                     // if we create the UIImage directly from the CIImage then it wont be drawn correctly in UIImageView
                     // the contentMode won't be respected, and it won't even draw with SDAnimatedImageView
                     const CGImage = context.createCGImageFromRect(output, output.extent);
-                    return new ImageSource(UIImage.imageWithCGImageScaleOrientation(CGImage, UIScreen.mainScreen.scale, UIImageOrientation.Up));
+                    return new ImageSource(
+                        UIImage.imageWithCGImageScaleOrientation(CGImage, UIScreen.mainScreen.scale, UIImageOrientation.Up)
+                    );
                 }
             }
         }

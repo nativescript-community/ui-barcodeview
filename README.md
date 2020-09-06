@@ -1,8 +1,8 @@
 # NativeScript BarcodeView
 
-[npm-image]:http://img.shields.io/npm/v/nativescript-barcodeview.svg
-[npm-url]:https://npmjs.org/package/nativescript-barcodeview
-[downloads-image]:http://img.shields.io/npm/dm/nativescript-barcodeview.svg
+[npm-image]:http://img.shields.io/npm/v/@nativescript-community/ui-barcodeview.svg
+[npm-url]:https://npmjs.org/package/@nativescript-community/ui-barcodeview
+[downloads-image]:http://img.shields.io/npm/dm/@nativescript-community/ui-barcodeview.svg
 
 ## Supported barcode types
 
@@ -32,11 +32,11 @@
 ### A note about `UPC_A` and `EAN_13`
 When either (or both) of these are specified, both can be returned.
 You can check the actual type by inspecting the `format` property of the result object.
-For details, see [#176](https://github.com/EddyVerbruggen/nativescript-barcodeview/issues/176).
+For details, see [#176](https://github.com/EddyVerbruggen/nativescript-barcodescanner/issues/176).
 
 ## Installation
 
-* `tns plugin add nativescript-barcodeview`
+* `tns plugin add @nativescript-community/ui-barcodeview`
 
 Be sure to run a new build after adding plugins to avoid any issues.
 
@@ -49,12 +49,12 @@ The nativescript BarcodeView is base on [nativescript-barcodescanner](https://gi
 (https://github.com/EddyVerbruggen)
 ## Plain NativeScript
 
-<span style="color:red">IMPORTANT: </span>_Make sure you include `xmlns:mdc="nativescript-canvas"` on the Page element_
+<span style="color:red">IMPORTANT: </span>_Make sure you include `xmlns:mdc="@nativescript-community/ui-barcodeview"` on the Page element_
 
 ### XML
 
 ```XML
-<Page xmlns:bc="nativescript-barcodeview">
+<Page xmlns:bc="@nativescript-community/ui-barcodeview">
     <StackLayout horizontalAlignment="center">
         <bc:BarcodeView width="100" height="100" scanResult="onScanResult"/>
    </StackLayout>
@@ -65,7 +65,7 @@ The nativescript BarcodeView is base on [nativescript-barcodescanner](https://gi
 
 ```typescript
 import { registerElement } from 'nativescript-angular/element-registry';
-import { BarcodeView } from 'nativescript-barcodeview';
+import { BarcodeView } from '@nativescript-community/ui-barcodeview';
 registerElement('BarcodeView', () => BarcodeView);
 ```
 
@@ -77,7 +77,7 @@ registerElement('BarcodeView', () => BarcodeView);
 
 ```javascript
 import Vue from 'nativescript-vue';
-(<any>Vue).registerElement('BarcodeView', () => require('nativescript-barcodeview').BarcodeView);
+(<any>Vue).registerElement('BarcodeView', () => require('@nativescript-community/ui-barcodeview').BarcodeView);
 
 ```
 

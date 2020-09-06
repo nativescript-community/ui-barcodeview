@@ -5,7 +5,7 @@ installBottomSheets();
 import BottomSheetPlugin from 'nativescript-material-bottomsheet/vue';
 Vue.use(BottomSheetPlugin);
 
-(<any>Vue).registerElement('BarcodeView', () => require('nativescript-barcodeview').BarcodeView);
+(<any>Vue).registerElement('BarcodeView', () => require('@nativescript-community/ui-barcodeview').BarcodeView);
 
 // import * as trace from '@nativescript/core/trace';
 // trace.addCategories(trace.categories.NativeLifecycle);

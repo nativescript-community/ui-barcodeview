@@ -1,5 +1,5 @@
 {
-    "name": "nativescript-barcodeview",
+    "name": "@nativescript-community/ui-barcodeview",
     "version": "3.4.9",
     "description": "Scan QR/barcodes with your NativeScript app.",
     "main": "barcodeview",
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/farfromrefug/nativescript-barcodeview.git"
+        "url": "git+https://github.com/nativescript-community/ui-barcodeview.git"
     },
     "keywords": [
         "ecosystem:nativescript",
@@ -45,10 +45,10 @@
     "author": "Martin Guillon martin@akylas.fr>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/farfromrefug/nativescript-barcodeview/issues"
+        "url": "https://github.com/nativescript-community/ui-barcodeview/issues"
     },
-    "homepage": "https://github.com/farfromrefug/nativescript-barcodeview",
+    "homepage": "https://github.com/nativescript-community/ui-barcodeview",
     "dependencies": {
-        "nativescript-perms": "^2.0.4"
+        "@nativescript-community/perms": "^2.1.0"
     }
 }

@@ -3,7 +3,6 @@
         "target": "es2017",
         "module": "esnext",
         "moduleResolution": "node",
-        "removeComments": true,
         "removeComments": false,
         "noLib": false,
         "emitDecoratorMetadata": true,

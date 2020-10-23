@@ -1,5 +1,6 @@
 *.ts
 *.map
+*.aar
 !barcodeview.android.d.ts
 !barcodeview.ios.d.ts
 !barcodeview-common.d.ts

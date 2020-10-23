@@ -1,6 +1,6 @@
 {
     "name": "@nativescript-community/ui-barcodeview",
-    "version": "3.5.0",
+    "version": "3.5.1",
     "description": "Scan QR/barcodes with your NativeScript app.",
     "main": "barcodeview",
     "typings": "index.d.ts",

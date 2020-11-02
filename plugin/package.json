@@ -4,6 +4,7 @@
     "description": "Scan QR/barcodes with your NativeScript app.",
     "main": "barcodeview",
     "typings": "index.d.ts",
+    "sideEffects": false,
     "nativescript": {
         "platforms": {
             "android": "2.3.0",

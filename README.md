@@ -70,7 +70,7 @@ registerElement('BarcodeView', () => BarcodeView);
 ```
 
 ```html
-<BarcodeView width="100" height="100" (scanResult)="onScanResult($event)"></CanvasView>
+<BarcodeView width="100" height="100" (scanResult)="onScanResult($event)"></BarcodeView>
 ```
 
 ## NativeScript + Vue

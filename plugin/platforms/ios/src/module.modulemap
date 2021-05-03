@@ -1,0 +1,5 @@
+module LibraryName {
+    umbrella header "QRCodeReader.h"
+    export *
+    module * { export * }
+}

@@ -120,3 +120,5 @@ you guess right?
 
 ZXing: https://github.com/zxing/zxing/releases
 ZXing Android Embedded: https://github.com/journeyapps/zxing-android-embedded
+
+With latest ZXing versions android minSdkVersion is bumped to 24. You can still lower it https://github.com/journeyapps/zxing-android-embedded#option-2-desugaring-advanced

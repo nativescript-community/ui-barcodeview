@@ -4,8 +4,10 @@ repositories {
 
 dependencies {
     def androidXAppCompatVersion =  project.hasProperty("androidXAppCompatVersion") ? project.androidXAppCompatVersion : "1.1.0"
+    def zxingVersion =  project.hasProperty("zxingVersion") ? project.zxingVersion : "3.4.1"
+    def zxingEmbeddedVersion =  project.hasProperty("zxingEmbeddedVersion") ? project.zxingEmbeddedVersion : "4.3.0"
 
-    implementation('com.journeyapps:zxing-android-embedded:4.1.0') { transitive = false }
+    implementation("com.journeyapps:zxing-android-embedded:$zxingEmbeddedVersion") { transitive = false }
 	implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
-    implementation 'com.google.zxing:core:3.3.0'
+    implementation "com.google.zxing:core:$zxingVersion"
 }

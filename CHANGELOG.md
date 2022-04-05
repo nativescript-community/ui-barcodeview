@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.5](https://github.com/nativescript-community/ui-barcodeview/compare/v3.5.4...v3.5.5) (2022-04-05)
+
+
+### Bug Fixes
+
+* **ios:** log removal ([d8e6287](https://github.com/nativescript-community/ui-barcodeview/commit/d8e6287c4bd3ccdbb4057250e7cffb57309ffbf1))
+
+
+
+
+
 ## [3.5.4](https://github.com/nativescript-community/ui-barcodeview/compare/v3.5.3...v3.5.4) (2021-12-26)
 
 

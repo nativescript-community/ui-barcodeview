@@ -27,3 +27,4 @@ src/README.md
 /plugin/README.md
 plugin/*.ts
 plugin/**/*.aar
+/pnpm-lock.yaml

@@ -132,12 +132,7 @@ export class BarcodeView extends BarcodeScannerBaseView {
     }
 
     [formatsProperty.setNative](value: string) {
-        console.log('formatsProperty', value);
-        // if (this.initFormats !== null && this.initFormats !== value) {
-        //     this.initFormats = null;
-        // }
         const types = getBarcodeTypes(value);
-
         this._reader.setMetadataObjectTypes(types);
     }
 

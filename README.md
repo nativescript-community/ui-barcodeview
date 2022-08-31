@@ -70,7 +70,7 @@ registerElement('BarcodeView', () => BarcodeView);
 ```
 
 ```html
-<BarcodeView width="100" height="100" (scanResult)="onScanResult($event)"></CanvasView>
+<BarcodeView width="100" height="100" (scanResult)="onScanResult($event)"></BarcodeView>
 ```
 
 ## NativeScript + Vue
@@ -88,9 +88,9 @@ import Vue from 'nativescript-vue';
 
 Whatever the UI framework you will receive the event in :
 ```ts
-function onScanResult(text:string, barcodeFormat:string) {
-
-}
+function onScanResult(args: ScanResult) {
+        console.log(`${args.text} & ${args.format}`);
+    }
 ```
 
 ### Properties

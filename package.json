@@ -68,7 +68,7 @@
     "devDependencies": {
         "@commitlint/cli": "^9.1.2",
         "@commitlint/config-conventional": "^9.1.2",
-        "@nativescript-community/perms": "^2.1.0",
+        "@nativescript-community/perms": "^2.2.25",
         "@nativescript/core": "7.0.0",
         "@nativescript/types-android": "7.0.2",
         "@nativescript/types-ios": "7.0.1",

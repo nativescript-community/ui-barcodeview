@@ -50,6 +50,6 @@
     },
     "homepage": "https://github.com/nativescript-community/ui-barcodeview",
     "dependencies": {
-        "@nativescript-community/perms": "^2.1.0"
+        "@nativescript-community/perms": "^2.2.25"
     }
 }

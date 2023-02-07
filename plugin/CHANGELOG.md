@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/nativescript-community/ui-barcodeview/compare/v3.5.5...v3.6.0) (2023-02-07)
+
+
+### Features
+
+* **android:** native-api-usage ([3721af0](https://github.com/nativescript-community/ui-barcodeview/commit/3721af009633930e909b6e4823f25f3dae48a7d0))
+
+
+
+
+
 ## [3.5.5](https://github.com/nativescript-community/ui-barcodeview/compare/v3.5.4...v3.5.5) (2022-04-05)
 
 **Note:** Version bump only for package @nativescript-community/ui-barcodeview

@@ -12,7 +12,7 @@
     },
     "scripts": {
         "setup": "ts-patch install",
-"prepare": "npm run setup",
+        "prepare": "npm run setup",
         "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && tsc -skipLibCheck",
         "clean": "rimraf ./plugin/**/*.d.ts ./plugin/**/*.js ./plugin/**/*.js.map plugin/node_modules plugin/package-lock.json",
         "build.plugin": "npm run tsc && cp README.md plugin/",
@@ -68,11 +68,11 @@
     "devDependencies": {
         "@commitlint/cli": "^9.1.2",
         "@commitlint/config-conventional": "^9.1.2",
+        "@nativescript-community/perms": "^2.1.0",
         "@nativescript/core": "7.0.0",
         "@nativescript/types-android": "7.0.2",
         "@nativescript/types-ios": "7.0.1",
         "@nativescript/webpack": "~3.0.1",
-        "@nativescript-community/perms": "^2.1.0",
         "@types/node": "^14.6.4",
         "@typescript-eslint/eslint-plugin": "4.0.1",
         "@typescript-eslint/parser": "4.0.1",

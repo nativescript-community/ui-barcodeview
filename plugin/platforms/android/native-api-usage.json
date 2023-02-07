@@ -1,0 +1,12 @@
+{
+    "uses": [
+        "android.hardware:Camera.CameraInfo",
+        "com.journeyapps.barcodescanner:BarcodeView",
+        "com.journeyapps.barcodescanner:BarcodeEncoder",
+        "com.journeyapps.barcodescanner:BarcodeCallback",
+        "com.journeyapps.barcodescanner:DecoderFactory",
+        "com.journeyapps.barcodescanner:DefaultDecoderFactory",
+        "com.google.zxing.client.android:BeepManager",
+        "com.google.zxing:BarcodeFormat"
+    ]
+}

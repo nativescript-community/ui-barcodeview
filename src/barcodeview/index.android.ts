@@ -1,3 +1,7 @@
+import { request } from '@nativescript-community/perms';
+import { AndroidActivityEventData, Application } from '@nativescript/core/application';
+import { Color } from '@nativescript/core/color';
+import { ImageSource } from '@nativescript/core/image-source';
 import {
     BarcodeFormat,
     BarcodeView as BarcodeScannerBaseView,
@@ -6,11 +10,7 @@ import {
     pauseProperty,
     preferFrontCameraProperty,
     torchOnProperty,
-} from './barcodeview-common';
-import { android as androidApp } from '@nativescript/core/application';
-import { request } from '@nativescript-community/perms';
-import { ImageSource } from '@nativescript/core/image-source';
-import { Color } from '@nativescript/core/color';
+} from './index.common';
 
 function nativeFormat(format: BarcodeFormat) {
     const NBarcodeFormat = com.google.zxing.BarcodeFormat;
@@ -82,11 +82,11 @@ export class BarcodeView extends BarcodeScannerBaseView {
         return new com.journeyapps.barcodescanner.BarcodeView(this._context);
     }
 
-    onActivityResume() {
+    onActivityResume(event: AndroidActivityEventData) {
         this.nativeViewProtected.resume();
     }
 
-    onActivityPause() {
+    onActivityPause(event: AndroidActivityEventData) {
         this.nativeViewProtected.pause();
     }
     initNativeView() {
@@ -118,8 +118,10 @@ export class BarcodeView extends BarcodeScannerBaseView {
             possibleResultPoints(param0: java.util.List<com.google.zxing.ResultPoint>) {},
         });
         barcodeView.decodeContinuous(this.callback);
-        androidApp.on('onActivityResumed', this.onActivityResume, this);
-        androidApp.on('onActivityPaused', this.onActivityPause, this);
+        //@ts-ignore
+        Application.android.on('onActivityResumed', this.onActivityResume, this);
+        //@ts-ignore
+        Application.android.on('onActivityPaused', this.onActivityPause, this);
         if (!this.formats) {
             const types = getBarcodeTypes(null);
             barcodeView.setDecoderFactory(new com.journeyapps.barcodescanner.DefaultDecoderFactory(types));
@@ -137,8 +139,8 @@ export class BarcodeView extends BarcodeScannerBaseView {
         this.callback = null;
         // this.beepManager = null;
 
-        androidApp.off('onActivityResumed', this.onActivityResume, this);
-        androidApp.off('onActivityPaused', this.onActivityPause, this);
+        Application.android.off('onActivityResumed', this.onActivityResume, this);
+        Application.android.off('onActivityPaused', this.onActivityPause, this);
         super.disposeNativeView();
     }
 

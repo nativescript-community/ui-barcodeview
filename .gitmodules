@@ -1,3 +1,9 @@
 [submodule "src-native/ios/BarcodeScannerFramework"]
 	path = src-native/ios/BarcodeScannerFramework
 	url = git@github.com:farfromrefug/ios-framework-barcodescanner.git
+[submodule "tools"]
+	path = tools
+	url = https://github.com/nativescript-community/plugin-seed-tools.git
+[submodule "demo-vue"]
+	path = demo-vue
+	url = https://github.com/nativescript-community/plugin-seed-demo-vue.git

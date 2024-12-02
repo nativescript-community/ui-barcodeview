@@ -1,3 +1,6 @@
+import { request } from '@nativescript-community/perms';
+import { Color } from '@nativescript/core/color';
+import { ImageSource } from '@nativescript/core/image-source';
 import {
     BarcodeFormat,
     BarcodeView as BarcodeScannerBaseView,
@@ -5,10 +8,7 @@ import {
     pauseProperty,
     preferFrontCameraProperty,
     torchOnProperty,
-} from './barcodeview-common';
-import { request } from '@nativescript-community/perms';
-import { ImageSource } from '@nativescript/core/image-source';
-import { Color } from '@nativescript/core/color';
+} from './index.common';
 
 export class BarcodeView extends BarcodeScannerBaseView {
     private _reader: QRCodeReader;
@@ -23,7 +23,7 @@ export class BarcodeView extends BarcodeScannerBaseView {
                 AVAudioSession.sharedInstance().setCategoryModeOptionsError(
                     AVAudioSessionCategoryPlayback,
                     AVAudioSessionModeDefault,
-                    AVAudioSessionCategoryOptions.MixWithOthers
+                    AVAudioSessionCategoryOptions.MixWithOthers,
                 );
             }
         }
@@ -197,7 +197,7 @@ const getBarcodeFormat = (nativeFormat: string): BarcodeFormat => {
         console.log(
             'Unknown format scanned: ' +
                 nativeFormat +
-                ', please report this at https://github.com/EddyVerbruggen/nativescript-barcodeview/issues'
+                ', please report this at https://github.com/EddyVerbruggen/nativescript-barcodeview/issues',
         );
         return nativeFormat as BarcodeFormat;
     }
@@ -228,7 +228,7 @@ const getBarcodeTypes = (formatsString: string): string[] => {
             AVMetadataObjectTypePDF417Code,
             AVMetadataObjectTypeQRCode,
             AVMetadataObjectTypeAztecCode,
-            AVMetadataObjectTypeInterleaved2of5Code
+            AVMetadataObjectTypeInterleaved2of5Code,
         );
     }
     return types;
@@ -311,7 +311,7 @@ export function generateBarCode({
                     // the contentMode won't be respected, and it won't even draw with SDAnimatedImageView
                     const CGImage = context.createCGImageFromRect(output, output.extent);
                     return new ImageSource(
-                        UIImage.imageWithCGImageScaleOrientation(CGImage, UIScreen.mainScreen.scale, UIImageOrientation.Up)
+                        UIImage.imageWithCGImageScaleOrientation(CGImage, UIScreen.mainScreen.scale, UIImageOrientation.Up),
                     );
                 }
             }

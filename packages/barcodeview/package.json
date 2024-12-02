@@ -2,7 +2,7 @@
     "name": "@nativescript-community/ui-barcodeview",
     "version": "3.6.0",
     "description": "Scan QR/barcodes with your NativeScript app.",
-    "main": "barcodeview",
+    "main": "index",
     "typings": "index.d.ts",
     "sideEffects": false,
     "nativescript": {
@@ -10,6 +10,16 @@
             "android": "2.3.0",
             "ios": "2.3.0"
         }
+    },
+    "scripts": {
+        "tsc": "cpy ../../src/barcodeview/index.d.ts ./ && tsc -d",
+        "readme": "readme generate -c ../../tools/readme/blueprint.json",
+        "build": "npm run tsc",
+        "build.watch": "npm run tsc -- -w",
+        "build.win": "npm run tsc-win",
+        "build.all": "npm run build && npm run build.angular",
+        "build.angular": "ng-packagr -p ../../src/barcodeview/angular/ng-package.json -c ../../src/barcodeview/angular/tsconfig.json && rm angular/.npmignore",
+        "clean": "rimraf ./*.d.ts ./*.js ./*.js.map"
     },
     "repository": {
         "type": "git",
@@ -50,6 +60,6 @@
     },
     "homepage": "https://github.com/nativescript-community/ui-barcodeview",
     "dependencies": {
-        "@nativescript-community/perms": "^2.2.25"
+        "@nativescript-community/perms": "^2.3.6"
     }
 }

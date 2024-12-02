@@ -1,41 +1,15 @@
 {
+    "extends": "./tools/tsconfig",
     "compilerOptions": {
-        "target": "es2017",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "removeComments": false,
-        "noLib": false,
-        "emitDecoratorMetadata": false,
-        "experimentalDecorators": true,
-        "lib": ["es6", "dom"],
-        "sourceMap": true,
-        "pretty": true,
-        "allowUnreachableCode": false,
-        "allowUnusedLabels": false,
-        "noEmitHelpers": true,
-        "noEmitOnError": false,
-        "noImplicitAny": false,
-        "noImplicitReturns": true,
-        "noImplicitUseStrict": false,
-        "noFallthroughCasesInSwitch": true,
-        "baseUrl": ".",
-        "outDir": "./plugin",
         "paths": {
-            
-            "tns-core-modules": ["./node_modules/@nativescript/core"],
-            "tns-core-modules/*": ["./node_modules/@nativescript/core/*"],
-            "@nativescript-community/ui-barcodeview/*": ["src/*"],
-            "@nativescript-community/ui-barcodeview/": ["src/barcodeview"],
-            "*": ["node_modules/*"]
-        },
-        "plugins": [
-          { "transform": "./node_modules/@nativescript/webpack/transformers/ns-transform-native-classes", "type": "raw" }
-        ]
+            "@nativescript-community/ui-barcodeview": ["src/barcodeview/index"],
+            "@nativescript-community/ui-barcodeview/*": ["src/barcodeview/*"]
+        }
     },
-    "include": ["src/**/*", "src/**/*.ts", "./references.d.ts", "./src/references.d.ts"],
-    "exclude": ["platforms"],
-    "compileOnSave": false,
-    "angularCompilerOptions": {
-        "skipTemplateCodegen": true
-    }
+    "references": [
+        {
+            //Need for IDE
+            "path": "./tsconfig.vue3.json"
+        }
+    ]
 }
